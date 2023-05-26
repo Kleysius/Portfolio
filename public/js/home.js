@@ -136,3 +136,13 @@ logoLink.addEventListener('click', function(event) {
     // Empêcher le comportement par défaut du lien
     event.preventDefault();
 });
+
+// menu burger
+const toggleBtn = document.querySelector('.toggleBtn');
+const toggleBtnIcon = document.querySelector('.toggleBtn i');
+const dropDownMenu = document.querySelector('.dropdownMenu');
+
+toggleBtn.addEventListener('click', () => {
+    dropDownMenu.classList.toggle('open');
+    toggleBtnIcon.classList.toggle('bx-x');
+});
