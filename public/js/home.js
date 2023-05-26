@@ -136,3 +136,5 @@ logoLink.addEventListener('click', function(event) {
     // Empêcher le comportement par défaut du lien
     event.preventDefault();
 });
+
+// menu burger
