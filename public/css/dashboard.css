@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    background-color: #060816;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Styles pour le header */
+.header {
+    font-family: 'Varela Round', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px 10%;
+    z-index: 100;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo a {
+    height: 50px;
+}
+
+.header .logo h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.header .logo img {
+    width: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 35px;
+}
+
+header nav a.active,
+header nav a:hover {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+header nav a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.page-title {
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 50px;
+}
+
+.page-title h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.btn-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    margin: auto;
+    background-color: #5919c8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #3a117f;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-gap: 20px;
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.project-item {
+    display: flex;
+    min-height: 300px;
+    background-color: #1b093c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(148, 60, 255, 0.5);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.project-url a,
+.project-git-url a {
+    color: #fff;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.btn-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-actions a {
+    text-align: center;
+    color: #fff;
+    background-color: #5919c8;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 45%;
+    transition: background-color 0.3s;
+}
+
+.btn-actions a:hover {
+    background-color: #3a117f;
+}
+
+footer {
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #120629;
+    color: #fff;
+    padding: 15px;
+}

@@ -1,0 +1,96 @@
+{% extends "/layouts/base.twig" %}
+
+{% block head %}
+	<link rel="stylesheet" href="/css/dashboard.css">
+	<link rel="stylesheet" href="/css/projectForm.css">
+{% endblock %}
+
+{% block title %}
+	Liste des projets
+{% endblock %}
+
+{% block header %}
+	<header class='header'>
+		<div class="logo">
+			<a href="/login" class="secret-login"><img src="/img/logo-portfolio.png" alt="logo"></a>
+			<h1>Thomas Sebasti</h1>
+		</div>
+
+		<nav>
+			<ul>
+				<li><a href="/home" style="--i:1;" class="active">Accueil</a></li>
+			</ul>
+		</nav>
+	</header>
+{% endblock %}
+
+{% block content %}
+	<div class="page-title">
+		<h1>Ajouter un projet</h1>
+	</div>
+
+	<form {% if project %} action="/updateProject/{{project.id}}" {% else %} action="/addProject" {% endif %} method="post" enctype="multipart/form-data">
+		<label for="title"></label>
+		<input type="text" id="title" name="title" placeholder="Titre du projet" required {% if project %} value="{{project.title}}" {% endif %}>
+
+		<label for="url"></label>
+		<input type="text" id="url" name="url" placeholder="Lien vers le projet" {% if project %} value="{{project.url}}" {% endif %}>
+
+		<label for="gitUrl"></label>
+		<input type="text" id="gitUrl" name="gitUrl" placeholder="Lien vers le repository GitHub" {% if project %} value="{{project.gitUrl}}" {% endif %}>
+
+		<label for="description"></label>
+		<textarea id="description" name="description" placeholder="Description du projet" required>{% if project %}{{project.description}}{% endif %}</textarea>
+
+		<div class="file-input-container">
+			<input type="file" id="image" name="image" class="file-input" {% if project %} value="{{project.image}}" {% endif %}>
+			<label for="image" class="file-input-label">Choisir un fichier pour ajouter une image</label>
+			<span class="file-name"></span>
+		</div>
+
+		<div class="image-preview">
+			<img id="preview-image" src="#" alt="">
+		</div>
+
+		<div class="btnForm">
+			<button type="submit">
+				{% if project %}Modifier{% else %}Ajouter le projet
+				{% endif %}
+			</button>
+		</div>
+	</form>
+
+	<div class="project-list">
+		{% for project in projects %}
+			<div class="project-item">
+				<h3 class="project-title">{{ project.title }}</h3>
+				{% if project.url %}
+					<p class="project-url">
+						<a href="{{ project.url }}">Lien vers le projet</a>
+					</p>
+				{% endif %}
+				<p class="project-git-url">
+					<a href="{{ project.gitUrl }}">Lien vers le repository GitHub</a>
+				</p>
+				<p class="project-description">{{ project.description }}</p>
+				{% if project.image %}
+					<img src="/img-upload/{{ project.image }}" alt="{{ project.title }}" class="project-image">
+				{% endif %}
+				<div class="btn-actions">
+					<a href="/updateProject/{{ project.id }}" class="btn-modify">Modifier</a>
+					<a href="/deleteProject/{{ project.id }}" class="btn-delete">Supprimer</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="/js/main.js"></script>
+{% endblock %}
+
+{% block footer %}
+	<footer>
+		<p>&copy; 2023 Mon Portfolio. Tous droits réservés.</p>
+	</footer>
+{% endblock %}

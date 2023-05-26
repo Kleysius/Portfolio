@@ -1,0 +1,190 @@
+{% extends "/layouts/base.twig" %}
+
+{% block title %}Portfolio | Thomas Sebasti
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="/css/home.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock %}
+
+{% block content %}
+	<body class="dark">
+
+		<header class='header'>
+			<div class="logo">
+				<a href="/login" class="secret-login"><img src="/img/logo-portfolio.png" alt="logo"></a>
+				<h1>Thomas Sebasti</h1>
+			</div>
+
+			<i class='bx bx-menu' id="menu-icon"></i>
+
+			<div class="light-mode" style="--i:1;">
+				<i class='bx bx-sun'></i>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="#home" style="--i:2;" class="active">Accueil</a></li>
+					<li><a href="#about" style="--i:3;">À propos</a></li>
+					<li><a href="#skills" style="--i:4;">Compétences</a></li>
+					<li><a href="#projects" style="--i:5;">Projets</a></li>
+					<li><a href="#contact" style="--i:6;">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="hero" id="home">
+
+			<div class="hero-sci">
+				<a href="https://github.com/Kleysius">
+					<i class='bx bxl-github'></i>
+				</a>
+				<a href="#">
+					<i class='bx bxl-facebook'></i>
+				</a>
+				<a href="https://www.linkedin.com/in/thomas-sebasti-953112b2/">
+					<i class='bx bxl-linkedin'></i>
+				</a>
+			</div>
+
+			<div class="hero-content">
+				<h1>Salut, moi c'est
+					<span id="name">Thomas Sebasti</span>
+				</h1>
+				<div class="text-wrapper">
+					<span class="first-text">Je suis</span>
+					<ul class="sec-texts">
+						<li>
+							<span>Développeur Web</span>
+						</li>
+						<li>
+							<span>Développeur Front-End</span>
+						</li>
+						<li>
+							<span>Développeur Back-End</span>
+						</li>
+					</ul>
+				</div>
+
+				<a href="#contact" class="btn">Contactez-moi</a>
+				<a href="./img/cv.pdf" class="btn-cv">
+					<span>Voir mon CV</span>
+				</a>
+			</div>
+
+			<div class="hero-image">
+				<div class="glowing-circle">
+					<span></span>
+					<span></span>
+					<div class="image">
+						<img src="./img/img-moi.png" alt="moi">
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="about" id="about">
+			<div class="about-content">
+				<img src="./img/dark-desk.png" alt="Image ronde">
+				<h2>À propos de
+					<span>moi</span>
+				</h2>
+				<p>Je suis un développeur web Junior passionné par la création de sites web esthétiques et intuitifs. Actuellement en formation pour devenir développeur web, j'ai découvert que mon intérêt se porte davantage sur le front-end et le design.</p>
+				<p>J'ai acquis des compétences solides en HTML, CSS, JavaScript, TypeScript, PHP, Node.js, MongoDB, ... Grâce à ces compétences, je suis capable de créer des sites web dynamiques, réactifs et performants.</p>
+				<p>Mon intérêt pour le design se reflète dans chacun de mes projets, où j'aime intégrer des éléments graphiques pour offrir une expérience utilisateur mémorable. Si vous êtes à la recherche d'un développeur web passionné et créatif, n'hésitez pas à
+					<span>
+						<a href="#contact">me contacter.</a>
+					</span>
+				</p>
+			</div>
+		</section>
+
+		<section class="skills" id="skills">
+			<h2>Compétences</h2>
+			<div class="skill-images">
+				<img src="./img/html.png" alt="HTML">
+				<img src="./img/css.png" alt="CSS">
+				<img src="./img/javascript.png" alt="JavaScript">
+				<img src="./img/typescript.png" alt="TypeScript">
+				<img src="./img/wordpress.svg" alt="Wordpress">
+				<img src="./img/logophp.png" alt="PHP">
+				<img src="./img/nodejs.png" alt="Node.js">
+				<img src="./img/mongodb.png" alt="MongoDB">
+				<img src="./img/figma.png" alt="Figma">
+			</div>
+		</section>
+
+
+		<section class="projects" id="projects">
+			<h2>Mes
+				<span>projets</span>
+			</h2>
+			<div class="project-list">
+				{% for project in projects %}
+					<div class="project-item">
+						<h3 class="project-title">{{ project.title }}</h3>
+						<img class="project-image" src="/img-upload/{{ project.image }}" alt="{{ project.title }}">
+						<p>{{ project.description }}</p>
+						<div class="links">
+							{% if project.url %}
+								<div class="project-url">
+									<a href="{{ project.url }}">
+										<i class='bx bx-link-external'></i>
+									</a>
+								</div>
+							{% endif %}
+							<div class="project-git-url">
+								<a href="{{ project.gitUrl }}">
+									<i class='bx bxl-github'></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+
+		<section class="contact" id="contact">
+
+			<h2 class="heading">Contactez -
+				<span>moi !</span>
+			</h2>
+
+			{% if message %}
+				<div class="success-message">{{ message }}</div>
+			{% endif %}
+
+			<form action="/contact" method="post">
+				<div class="input-box">
+					<input type="text" name="name" id="name" placeholder="Nom - Prénom" required>
+					<input type="email" name="email" id="email" placeholder="Adresse email" required>
+				</div>
+				<div class="input-box">
+					<input type="number" name="phone" id="phone" placeholder="Numéro de téléphone">
+					<input type="text" name="subject" id="subject" placeholder="Sujet" required>
+				</div>
+				<textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
+				<button type="submit" class="btn" onclick="ajouterConfettis()">Envoyer</button>
+			</form>
+			<canvas id="confettis"></canvas>
+		</section>
+
+		<div class="iconTop">
+			<a href="#home">
+				<i class='bx bx-up-arrow-alt'></i>
+			</a>
+		</div>
+
+		<footer class='footer'>
+			<div class="footer-text">
+				<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
+			</div>
+		</footer>
+	</body>
+{% endblock %}
+
+{% block script %}
+	<script src="/js/home.js"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "/layouts/base.twig" %}
+
+{% block head %}
+	<link rel="stylesheet" href="/css/projectForm.css">
+{% endblock %}
+
+
+<form {% if project %} action="/updateProject/{{project.id}}" {% else %} action="/addProject" {% endif %} method="post">
+	<label for="title"></label>
+	<input type="text" id="title" name="title" placeholder="Titre du projet" required {% if project %} value="{{project.title}}" {% endif %}>
+
+	<label for="url"></label>
+	<input type="text" id="url" name="url" placeholder="Lien vers le projet" {% if project %} value="{{project.url}}" {% endif %}>
+
+	<label for="gitUrl"></label>
+	<input type="text" id="gitUrl" name="gitUrl" placeholder="Lien vers le repository GitHub" {% if project %} value="{{project.gitUrl}}" {% endif %}>
+
+	<label for="description"></label>
+	<textarea id="description" name="description" placeholder="Description du projet" required>{% if project %}{{project.description}}{% endif %}
+	</textarea>
+
+	<div class="file-input-container">
+		<input type="file" id="image" name="image" class="file-input" {% if project %} value="{{project.image}}" {% endif %}>
+		<label for="image" class="file-input-label">Choisir un fichier pour ajouter une image</label>
+		<span class="file-name"></span>
+	</div>
+
+	<div class="image-preview">
+		<img id="preview-image" src="#" alt="">
+	</div>
+
+	<div class="btnForm">
+		<button type="submit">{% if project %}Modifier{% else %}Ajouter le projet{% endif %}</button>
+	</div>
+</form>

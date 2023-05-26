@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-image: url('../img/herobg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Styles pour le header */
+header {
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #120629;
+    padding: 15px;
+}
+
+header h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 25px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #120629;
+    color: #fff;
+    padding: 15px;
+}

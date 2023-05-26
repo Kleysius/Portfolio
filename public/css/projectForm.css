@@ -1,0 +1,117 @@
+form {
+    max-width: 375px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #353535b3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+input,
+textarea {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    background-color: #333;
+    width: 100%;
+    padding: 8px;
+    color: #8363cc;
+    border-radius: 5px;
+    border: 2px solid #4a4a4aa3;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+textarea {
+    max-width: 100%;
+    height: 100px;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid #8363cc;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 0.8rem;
+    color: #8363cc;
+}
+
+.file-input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.file-input-label {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 0.8rem;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 2px solid #4a4a4aa3;
+    color: #8363cc;
+    cursor: pointer;
+}
+
+.file-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #8363cc;
+}
+
+.image-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.btnForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnForm button {
+    background-color: #8363cc;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #61499a;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

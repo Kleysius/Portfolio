@@ -1,0 +1,1072 @@
+@font-face {
+    font-family: 'Aqua';
+    src: url('../fonts/aqua.ttf') format('truetype');
+}
+
+/* home.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+body.dark {
+    background-color: #060816;
+    color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+body.light {
+    background-color: #f1f1f1;
+    color: #060816;
+    overflow-x: hidden;
+}
+
+body.light .light-mode i {
+    color: #060816;
+}
+
+body.light .header h1 {
+    color: #060816;
+}
+
+body.light .header nav ul li a {
+    color: #060816;
+}
+
+body.light header nav a.active, body.light header nav a:hover {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .hero-content #name {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .hero-sci a,
+body.light .hero-sci a::before {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+}
+
+body.light .hero-sci a::after {
+    background: #f1f1f1;
+}
+
+body.light .hero-sci i {
+    color: #060816;
+}
+
+body.light .sec-texts li {
+    color: #060816;
+}
+
+body.light .sec-texts li span::before {
+    background: #f1f1f1;
+    border-left: 2px solid #ff5ff0;
+}
+
+body.light .btn::before,
+body.light .btn::after {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    background-size: 200%;
+    background-position: 0 0;
+}
+
+body.light .btn:hover::before,
+body.light .btn:hover::after {
+    background-position: 100% 0;
+}
+
+body.light .btn-cv span {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .hero-image .glowing-circle::after {
+    background: #f1f1f1;
+}
+
+body.light .glowing-circle span {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+}
+
+body.light .about span {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .projects h2 span {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .project-item {
+    color: #060816;
+    background: #f1f1f1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+body.light .project-title {
+    color: #060816;
+}
+
+body.light .links i {
+    color: #060816;
+}
+
+body.light .heading span {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+body.light .contact form .input-box input,
+body.light .contact form textarea {
+    background: #f1f1f1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+body.light .contact form .input-box input,
+body.light .contact form textarea {
+    color: #060816;
+}
+
+body.light .contact form .input-box input::placeholder,
+body.light .contact form textarea::placeholder {
+    color: #060816;
+}
+
+body.light .contact form .btn {
+    border: none;
+}
+
+body.light .footer {
+    background-color: #060816;
+}
+
+body.light .iconTop a {
+    background: linear-gradient(45deg, #ff5ff0, #ffe233);
+}
+
+body.light .iconTop a:hover {
+    box-shadow: 0 0 10px #ff9933;
+}
+
+section {
+    min-height: 100vh;
+}
+
+/* Styles pour le header */
+header {
+    font-family: 'Aqua', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px 10%;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+}
+
+.logo a {
+    height: 50px;
+    cursor: inherit;
+}
+
+.logo h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.light-mode i {
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 45px;
+}
+
+header nav a.active,
+header nav a:hover {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#menu-icon {
+    font-size: 40px;
+    color: #fff;
+    display: none;
+}
+
+header nav a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+.hero {
+    font-family: 'Aqua', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    line-height: 80px;
+    margin-left: -30px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.hero-content #name {
+    font-size: 72px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.text-wrapper {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.text-wrapper .first-text {
+    font-size: 20px;
+}
+
+.text-wrapper .sec-texts {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.sec-texts li {
+    position: relative;
+    top: 0;
+    font-size: 20px;
+    color: #fff;
+    list-style: none;
+    padding: 0 10px;
+    text-shadow: 0 0 5px #fff;
+    animation: slide 9.1s steps(3) infinite;
+}
+
+.sec-texts li span {
+    position: relative;
+}
+
+.sec-texts li span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 30px;
+    background: #060816;
+    border-left: 2px solid #ac86ff;
+    animation: typing 1.5s steps(20) infinite alternate;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn {
+    font-family: 'Aqua', sans-serif;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 10px 30px;
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    z-index: 1;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    background-size: 200%;
+    background-position: 0 0;
+    z-index: -1;
+    border-radius: 40px;
+    filter: blur(5px);
+    transition: 0.5s ease;
+}
+
+.btn:hover::before {
+    background-position: 100% 0;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    background-size: 200%;
+    background-position: 0 0;
+    z-index: -1;
+    border-radius: 40px;
+    transition: 0.5s ease;
+}
+
+.btn:hover::after {
+    background-position: 100% 0;
+}
+
+.btn-cv {
+    font-family: 'Aqua', sans-serif;
+    color: #fff;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 1px;
+    z-index: 1;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.btn-cv span {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.btn-cv span:hover {
+    transform: scale(1.1);
+}
+
+.hero-sci a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 0;
+    z-index: 1;
+}
+
+.hero-sci a:nth-child(1) {
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.hero-sci a:nth-child(2) {
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.hero-sci a:nth-child(3) {
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.hero-sci a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.5s ease;
+}
+
+.hero-sci a:hover::before {
+    filter: blur(5px);
+}
+
+.hero-sci a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #060816;
+    border-radius: 50%;
+    transform: scale(0.88);
+    z-index: -1;
+    transition: 0.5s ease;
+}
+
+.hero-sci a:hover::after {
+    transform: scale(0);
+}
+
+.hero-image {
+    width: 410px;
+    height: 410px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2.1s, 3.1s;
+}
+
+.hero-image .glowing-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image .glowing-circle::after {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: #060816;
+    border-radius: 50%;
+}
+
+.glowing-circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    border-radius: 50%;
+    animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1) {
+    filter: blur(10px);
+}
+
+.glowing-circle .image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.image img {
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+    max-width: 350px;
+    object-fit: cover;
+}
+
+.about {
+    font-family: 'Aqua', sans-serif;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10% 0;
+}
+
+.about-content {
+    margin: auto;
+    width: 90%;
+}
+
+.about h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.about span {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.about p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.about img {
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    object-fit: contain;
+    float: left;
+    shape-outside: margin-box;
+    margin-right: 10px;
+}
+
+.skills {
+    font-family: 'Aqua', sans-serif;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10% 0;
+}
+
+.skills h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 150px;
+}
+
+.skill-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-images img {
+    width: 100px;
+    height: 100px;
+    animation: floatImage 2s ease-in-out infinite;
+}
+
+.skill-images img:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.skill-images img:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.skill-images img:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.skill-images img:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.skill-images img:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.skill-images img:nth-child(6) {
+    animation-delay: 1.2s;
+    height: 60px;
+}
+
+.skill-images img:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+.skill-images img:nth-child(8) {
+    animation-delay: 1.6s;
+}
+
+.skill-images img:nth-child(9) {
+    animation-delay: 1.8s;
+}
+
+.projects {
+    font-family: 'Aqua', sans-serif;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10% 0;
+}
+
+.projects h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.projects h2 span {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.project-list {
+    display: flex;
+    grid-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 500px;
+    width: 450px;
+    background: #1b093c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.project-url a,
+.project-git-url a {
+    color: #fff;
+}
+
+.project-item img {
+    /* width: 100%; */
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.project-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.links i {
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.links i:hover {
+    transform: translateY(-5px);
+}
+
+.contact {
+    font-family: 'Aqua', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.contact h2 {
+    font-size: 48px;
+}
+
+.heading span {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.success-message {
+    color: #26c028;
+    font-size: 20px;
+}
+
+.contact form {
+    max-width: 900px;
+    margin: 16px auto;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    font-family: 'Aqua', sans-serif;
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+    background: #1b093c;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+}
+
+.contact form .input-box input::placeholder,
+.contact form textarea::placeholder {
+    font-size: 16px;
+    color: #fff;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+#confettis {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#confettis.confettis-small {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10%;
+    background-color: #1b093c;
+}
+
+.footer-text p {
+    font-family: 'Aqua', sans-serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+.iconTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+}
+
+.iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.iconTop a:hover {
+    box-shadow: 0 0 10px #af89ff;
+}
+
+.iconTop a i {
+    font-size: 30px;
+    color: #fff;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -90px;
+    }
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -10px 0 10px;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes circleRotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1550px) {
+    .logo h1 {
+        font-size: 16px;
+    }
+
+    header nav a {
+        font-size: 16px;
+    }
+
+    header nav li {
+        margin-right: 35px;
+    }
+
+    .hero-content {
+        max-width: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content #name {
+        font-size: 60px;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-image .glowing-circle::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .glowing-circle .image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .image img {
+        max-width: 260px;
+    }
+
+    .about h2 {
+        font-size: 40px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .projects {
+        width: 100%;
+        padding: 0 5% 0;
+    }
+
+    .projects h2 {
+        font-size: 40px;
+    }
+
+    .project-list {
+        grid-gap: 20px;
+    }
+
+    .project-item {
+        min-height: 400px;
+        width: 350px;
+        padding: 15px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+
+    .projet-image {
+        height: 180px;
+    }
+
+    .project-item p {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .links i {
+        font-size: 20px;
+    }
+
+    .contact h2 {
+        font-size: 40px;
+    }
+
+    .contact form {
+        max-width: 500px;
+        margin-bottom: 0;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .contact form .btn {
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .footer-text p {
+        font-size: 14px;
+    }
+
+
+}

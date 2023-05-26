@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Aqua';
+    src: url('../fonts/aqua.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Aqua', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-image: url('../img/herobg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    font-family: 'Aqua', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px 10%;
+    z-index: 100;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo a {
+    height: 50px;
+}
+
+.header .logo h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.header .logo img {
+    width: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 35px;
+}
+
+header nav a.active,
+header nav a:hover {
+    background: linear-gradient(45deg, #915FFF, #33ffbe);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+header nav a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-title {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1b093c;
+    box-shadow: 0 0 10px rgba(93, 22, 192, 0.668);
+    border-radius: 10px;
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    padding: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn-primary {
+    font-family: 'Aqua', sans-serif;
+    font-size: 1rem;
+    background-color: #5919c8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3a117f;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #120629;
+    color: #fff;
+    padding: 15px;
+}
