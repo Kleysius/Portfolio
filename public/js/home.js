@@ -8,7 +8,7 @@ themeButton.addEventListener('click', () => {
         body.classList.add('light');
         body.classList.remove('dark');
         themeButton.innerHTML = '<i class="bx bx-moon"></i>';
-    } else if(body.classList.contains('light')) {
+    } else if (body.classList.contains('light')) {
         body.classList.add('dark');
         body.classList.remove('light');
         themeButton.innerHTML = '<i class="bx bx-sun"></i>';
@@ -115,18 +115,20 @@ let glowingCircle = document.querySelector(".glowing-circle");
 let heroSci = document.querySelector(".hero-sci");
 
 window.addEventListener("scroll", () => {
-    let value = window.scrollY;
+    if (window.innerWidth > 1100) {
+        let value = window.scrollY;
 
-    heroContent.style.transform = `translateX(-${value * 1.2}px)`;
-    glowingCircle.style.transform = `translateX(${value * 1.2}px)`;
-    heroSci.style.transform = `translateX(-${value * 1.2}px)`;
+        heroContent.style.transform = `translateX(-${value * 1.2}px)`;
+        glowingCircle.style.transform = `translateX(${value * 1.2}px)`;
+        heroSci.style.transform = `translateX(-${value * 1.2}px)`;
+    }
 });
 
 // Rediriger vers la page de connexion après 5 clics sur le logo
 let logoLink = document.querySelector('.secret-login');
 let clickCount = 0;
 
-logoLink.addEventListener('click', function(event) {
+logoLink.addEventListener('click', function (event) {
     clickCount++;
 
     if (clickCount === 5) {
@@ -146,3 +148,54 @@ toggleBtn.addEventListener('click', () => {
     dropDownMenu.classList.toggle('open');
     toggleBtnIcon.classList.toggle('bx-x');
 });
+
+// Animer la progress bar
+let circularProgressList = document.querySelectorAll('.circular-progress');
+let progressValueList = document.querySelectorAll('.progress-value');
+
+let progressEndValueList = [90, 85, 65, 60, 65];
+
+let speed = 50;
+
+function animateProgress() {
+    circularProgressList.forEach((circularProgress, index) => {
+        let progressEndValue = progressEndValueList[index];
+        let progressStartValue = 0;
+        const body = document.body;
+
+        let progressAnimation = setInterval(() => {
+            progressStartValue++;
+            progressValueList[index].textContent = progressStartValue + '%';
+
+            if (body.classList.contains('dark')) {
+                circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #f1f1f1 0deg)`;
+            } else {
+                circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #e4dff0 0deg)`;
+            }
+
+            if (progressStartValue === progressEndValue) {
+                clearInterval(progressAnimation);
+            }
+        }, speed);
+    });
+}
+
+animateProgress();
+
+// Récupérer la référence de la section des compétences
+const skillsSection = document.querySelector('#skills');
+
+// Créer une instance de l'Intersection Observer
+const observerSkills = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Si la section des compétences est visible dans la fenêtre visible, déclencher l'animation
+            animateProgress();
+            // Réobserver la section des compétences pour relancer l'animation à chaque retour
+            observerSkills.observe(entry.target);
+        }
+    });
+});
+
+// Observer la section des compétences
+observerSkills.observe(skillsSection);
