@@ -211,7 +211,7 @@ ScrollReveal().reveal('.about h2', {
 });
 
 ScrollReveal().reveal('.about p', {
-    delay: 500,
+    delay: 400,
     duration: 1200,
     distance: '100px',
     origin: 'left',
