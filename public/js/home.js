@@ -111,7 +111,6 @@ observer.observe(heroSection);
 
 // Faire s'écarter le hero-content, hero-image et hero-sci pour laisser place à la section about au scroll
 let heroContent = document.querySelector(".hero-content");
-let glowingCircle = document.querySelector(".glowing-circle");
 let heroSci = document.querySelector(".hero-sci");
 
 window.addEventListener("scroll", () => {
@@ -119,7 +118,6 @@ window.addEventListener("scroll", () => {
         let value = window.scrollY;
 
         heroContent.style.transform = `translateX(-${value * 1.2}px)`;
-        glowingCircle.style.transform = `translateX(${value * 1.2}px)`;
         heroSci.style.transform = `translateX(-${value * 1.2}px)`;
     }
 });
@@ -179,8 +177,6 @@ function animateProgress() {
         }, speed);
     });
 }
-
-animateProgress();
 
 // Récupérer la référence de la section des compétences
 const skillsSection = document.querySelector('#skills');

@@ -447,6 +447,11 @@ header nav a {
     transform: scale(1.1);
 }
 
+.hero-sci {
+    position: relative;
+    z-index: 2;
+}
+
 .hero-sci a {
     position: relative;
     display: flex;
@@ -824,13 +829,29 @@ header nav a {
 }
 
 .contact {
+    position: relative;
     font-family: 'Quicksand', sans-serif;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.contact canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 70px 10% 0;
 }
 
 .contact h2 {

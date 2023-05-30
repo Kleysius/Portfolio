@@ -48,6 +48,7 @@
 
 		<section class="hero" id="home">
 
+
 			<div class="hero-sci">
 				<a href="https://github.com/Kleysius">
 					<i class='bx bxl-github'></i>
@@ -86,20 +87,19 @@
 			</div>
 
 			<div class="hero-image">
-				<div class="glowing-circle">
-					<span></span>
-					<span></span>
-					<div class="image">
-						<img src="./img/img-moi.png" alt="moi">
+					<div class="glowing-circle">
+						<span></span>
+						<span></span>
+						<div class="image">
+							<img src="./img/img-moi.png" alt="moi">
+						</div>
 					</div>
 				</div>
-			</div>
 
 		</section>
 
 		<section class="about" id="about">
 			<div class="about-content">
-				<img src="./img/dark-desk.png" alt="Image ronde">
 				<h2>À propos de
 					<span>moi</span>
 				</h2>
@@ -199,6 +199,8 @@
 
 		<section class="contact" id="contact">
 
+		<div class="contact-content">
+
 			<h2 class="heading">Contactez -
 				<span>moi !</span>
 			</h2>
@@ -220,6 +222,7 @@
 				<button type="submit" class="btn" onclick="ajouterConfettis()">Envoyer</button>
 			</form>
 			<canvas id="confettis"></canvas>
+			</div>
 		</section>
 
 		<div class="iconTop">
@@ -233,7 +236,23 @@
 				<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
 			</div>
 		</footer>
-	<script src="https://unpkg.com/scrollreveal"></script>
+
+		<script src="https://unpkg.com/scrollreveal"></script>
+
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+									    "imports": {
+									      "three": "https://unpkg.com/three@latest/build/three.module.js",
+										      "three/addons/": "https://unpkg.com/three@latest/examples/jsm/"
+										}
+						
+									}
+		</script>
+
+		<script type="module" src="/js/three.js"></script>
+
 	</body>
 {% endblock %}
 
