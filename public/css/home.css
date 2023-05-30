@@ -567,7 +567,7 @@ header nav a {
     position: absolute;
     left: 55%;
     transform: translateX(-50%);
-    max-width: 350px;
+    max-width: 315px;
     object-fit: cover;
 }
 
