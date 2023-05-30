@@ -189,8 +189,10 @@ const skillsSection = document.querySelector('#skills');
 const observerSkills = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Si la section des compétences est visible dans la fenêtre visible, déclencher l'animation
-            animateProgress();
+            // Si la section des compétences est visible dans la fenêtre visible, déclencher l'animation avec un delai d'1.2sec
+            setTimeout(() => {
+                animateProgress();
+            }, 1200);
             // Réobserver la section des compétences pour relancer l'animation à chaque retour
             observerSkills.observe(entry.target);
         }
@@ -199,3 +201,91 @@ const observerSkills = new IntersectionObserver(entries => {
 
 // Observer la section des compétences
 observerSkills.observe(skillsSection);
+
+ScrollReveal().reveal('.about h2', {
+    delay: 200,
+    duration: 1200,
+    distance: '100px',
+    origin: 'left',
+    reset: true
+});
+
+ScrollReveal().reveal('.about p', {
+    delay: 500,
+    duration: 1200,
+    distance: '100px',
+    origin: 'left',
+    reset: true
+});
+
+ScrollReveal().reveal('.skills-text h2', {
+    delay: 200,
+    duration: 1200,
+    distance: '100px',
+    origin: 'bottom',
+    reset: true
+});
+
+ScrollReveal().reveal('.skills-text p', {
+    delay: 400,
+    duration: 1200,
+    distance: '100px',
+    origin: 'bottom',
+    reset: true
+});
+
+ScrollReveal().reveal('.container-skills', {
+    delay: 600,
+    duration: 1200,
+    distance: '100px',
+    origin: 'bottom',
+    reset: true
+});
+
+ScrollReveal().reveal('.container-skills:nth-child(2n)', {
+    delay: 600,
+    duration: 1200,
+    distance: '100px',
+    origin: 'top',
+    reset: true
+});
+
+ScrollReveal().reveal('.projects h2', {
+    delay: 200,
+    duration: 1200,
+    distance: '100px',
+    origin: 'top',
+    reset: true
+});
+
+ScrollReveal().reveal('.project-item', {
+    delay: 400,
+    duration: 1200,
+    distance: '100px',
+    origin: 'top',
+    reset: true
+});
+
+ScrollReveal().reveal('.project-item:nth-child(2n)', {
+    delay: 400,
+    duration: 1200,
+    distance: '100px',
+    origin: 'bottom',
+    reset: true
+});
+
+ScrollReveal().reveal('.contact h2', {
+    delay: 200,
+    duration: 1200,
+    distance: '100px',
+    origin: 'top',
+    reset: true
+});
+
+ScrollReveal().reveal('.contact form', {
+    delay: 400,
+    duration: 1200,
+    distance: '100px',
+    origin: 'bottom',
+    reset: true
+});
