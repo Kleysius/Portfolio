@@ -42,6 +42,9 @@
 		<label for="description"></label>
 		<textarea id="description" name="description" placeholder="Description du projet" required>{% if project %}{{project.description}}{% endif %}</textarea>
 
+		<label for="technologies"></label>
+		<input type="text" id="technologies" name="technologies" placeholder="Technologies utilisées" required {% if project %} value="{{project.technologies}}" {% endif %}>
+
 		<div class="file-input-container">
 			<input type="file" id="image" name="image" class="file-input" {% if project %} value="{{project.image}}" {% endif %}>
 			<label for="image" class="file-input-label">Choisir un fichier pour ajouter une image</label>
@@ -76,6 +79,14 @@
 				{% if project.image %}
 					<img src="/img-upload/{{ project.image }}" alt="{{ project.title }}" class="project-image">
 				{% endif %}
+				{# pour chaque technologie, on ajoute un # devant #}
+				{% set technologies = project.technologies|split(',') %}
+				{% for technology in technologies %}
+					{% if technology %}
+						{% set technology = '#' ~ technology %}
+						<span class="project-technology">{{ technology }}</span>
+					{% endif %}
+				{% endfor %}
 				<div class="btn-actions">
 					<a href="/updateProject/{{ project.id }}" class="btn-modify">Modifier</a>
 					<a href="/deleteProject/{{ project.id }}" class="btn-delete">Supprimer</a>

@@ -710,13 +710,13 @@ header nav a {
 
 .projects {
     font-family: 'Quicksand', sans-serif;
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    padding: 0 10% 0;
+    padding: 0 2% 0;
 }
 
 .projects h2 {
@@ -767,9 +767,9 @@ header nav a {
 }
 
 .project-item img {
-    /* width: 100%; */
+    width: 100%;
     height: 250px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -778,6 +778,31 @@ header nav a {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.project-tech {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.technology {
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.technology:nth-child(1) {
+    color: orange;
+}
+
+.technology:nth-child(2) {
+    color: #33ffbe;
+}
+
+.technology:nth-child(3) {
+    color: #ff625f;
 }
 
 .links {
@@ -1028,7 +1053,7 @@ header nav a {
 }
 
 .dropdownMenu.open {
-    height: auto;
+    height: 235px;
 }
 
 .dropdownMenu ul {
@@ -1049,12 +1074,6 @@ header nav a {
 .dropdownMenu li a {
     color: #fff;
     font-size: 14px;
-}
-
-@media screen and (max-width: 1100px) {
-    * {
-        animation: none;
-    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1100px) {
@@ -1242,11 +1261,15 @@ header nav a {
 
     .project-item p {
         font-size: 14px;
-        line-height: 1;
+        line-height: 1.4;
+    }
+
+    .technology {
+        font-size: 15px;
     }
 
     .links i {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .contact h2 {
@@ -1286,6 +1309,10 @@ header nav a {
 
     .dropdownMenu {
         display: block;
+    }
+
+    .dropdownMenu.open {
+        height: 220px;
     }
 
     .dropdownMenu li a {
@@ -1498,6 +1525,10 @@ header nav a {
         line-height: 1.5;
     }
 
+    .technology {
+        font-size: 15px;
+    }
+
     .project-title {
         font-size: 20px;
         margin-bottom: 0;
@@ -1553,6 +1584,10 @@ header nav a {
     .dropdownMenu {
         left: 2rem;
         width: unset;
+    }
+
+    .dropdownMenu.open {
+        height: 210px;
     }
 
     .dropdownMenu li a {

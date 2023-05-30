@@ -1,17 +1,8 @@
 const express = require('express');
 const contactRouter = express.Router();
-const nodemailer = require('nodemailer');
 const contactModel = require('../models/contactModel.js');
-require('dotenv').config();
+const transporter = require('../services/mailer.js');
 
-// Configuration du transporteur SMTP
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.GMAIL_USERNAME,
-        pass: process.env.GMAIL_PASSWORD,
-    },
-});
 
 // Route pour la page de contact
 contactRouter.get('/contact', async (req, res) => {

@@ -123,31 +123,31 @@
 					<div class="circular-progress">
 						<img src="./img/html.svg" alt="HTML">
 					</div>
-					<span class="progress-value">0%</span>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/css.svg" alt="CSS">
 					</div>
-					<span class="progress-value">0%</span>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/javascript.png" alt="JavaScript">
 					</div>
-					<span class="progress-value">0%</span>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/php.svg" alt="PHP">
 					</div>
-					<span class="progress-value">0%</span>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/node-js.svg" alt="Node.js">
 					</div>
-					<span class="progress-value">0%</span>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 			</div>
 			<div class="skill-images">
@@ -168,6 +168,15 @@
 					<div class="project-item">
 						<h3 class="project-title">{{ project.title }}</h3>
 						<img class="project-image" src="/img-upload/{{ project.image }}" alt="{{ project.title }}">
+						<div class="project-tech">
+							{% set technologies = project.technologies|split(',') %}
+							{% for technology in technologies %}
+								{% if technology %}
+									{% set technology = '#' ~ technology %}
+									<span class="technology">{{ technology }}</span>
+								{% endif %}
+							{% endfor %}
+						</div>
 						<p>{{ project.description }}</p>
 						<div class="links">
 							{% if project.url %}

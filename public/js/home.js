@@ -153,9 +153,9 @@ toggleBtn.addEventListener('click', () => {
 let circularProgressList = document.querySelectorAll('.circular-progress');
 let progressValueList = document.querySelectorAll('.progress-value');
 
-let progressEndValueList = [90, 85, 65, 60, 65];
+let progressEndValueList = [90, 85, 70, 60, 65];
 
-let speed = 50;
+let speed = 25;
 
 function animateProgress() {
     circularProgressList.forEach((circularProgress, index) => {
@@ -165,7 +165,7 @@ function animateProgress() {
 
         let progressAnimation = setInterval(() => {
             progressStartValue++;
-            progressValueList[index].textContent = progressStartValue + '%';
+            // progressValueList[index].textContent = progressStartValue + '%';
 
             if (body.classList.contains('dark')) {
                 circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #f1f1f1 0deg)`;

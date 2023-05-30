@@ -37,7 +37,16 @@ const projectSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-    }
+    },
+    technologies: {
+        type: String,
+        required: [true, 'A project must have at least one technology'],
+        validate: {
+            validator: function (val) {
+                return val.length > 0;
+            }
+        }
+    },
 });
 
 const projectModel = mongoose.model('Project', projectSchema);

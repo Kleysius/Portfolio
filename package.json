@@ -18,5 +18,8 @@
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
     "twig": "^1.16.0"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
   }
 }
