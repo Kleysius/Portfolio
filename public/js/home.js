@@ -180,8 +180,6 @@ function animateProgress() {
     });
 }
 
-animateProgress();
-
 // Récupérer la référence de la section des compétences
 const skillsSection = document.querySelector('#skills');
 

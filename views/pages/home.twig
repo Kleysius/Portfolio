@@ -47,54 +47,55 @@
 		</header>
 
 		<section class="hero" id="home">
+			
 
-			<div class="hero-sci">
-				<a href="https://github.com/Kleysius">
-					<i class='bx bxl-github'></i>
-				</a>
-				<a href="#">
-					<i class='bx bxl-facebook'></i>
-				</a>
-				<a href="https://www.linkedin.com/in/thomas-sebasti-953112b2/">
-					<i class='bx bxl-linkedin'></i>
-				</a>
-			</div>
-
-			<div class="hero-content">
-				<h1>Salut, moi c'est<br>
-					<span id="name">Thomas Sebasti</span>
-				</h1>
-				<div class="text-wrapper">
-					<span class="first-text">Je suis</span>
-					<ul class="sec-texts">
-						<li>
-							<span>Développeur Web</span>
-						</li>
-						<li>
-							<span>Développeur Front-End</span>
-						</li>
-						<li>
-							<span>Développeur Back-End</span>
-						</li>
-					</ul>
+				<div class="hero-sci">
+					<a href="https://github.com/Kleysius">
+						<i class='bx bxl-github'></i>
+					</a>
+					<a href="#">
+						<i class='bx bxl-facebook'></i>
+					</a>
+					<a href="https://www.linkedin.com/in/thomas-sebasti-953112b2/">
+						<i class='bx bxl-linkedin'></i>
+					</a>
 				</div>
 
-				<a href="#contact" class="btn">Contactez-moi</a>
-				<a href="./img/cv.pdf" class="btn-cv">
-					<span>Voir mon CV</span>
-				</a>
-			</div>
+				<div class="hero-content">
+					<h1>Salut, moi c'est<br>
+						<span id="name">Thomas Sebasti</span>
+					</h1>
+					<div class="text-wrapper">
+						<span class="first-text">Je suis</span>
+						<ul class="sec-texts">
+							<li>
+								<span>Développeur Web</span>
+							</li>
+							<li>
+								<span>Développeur Front-End</span>
+							</li>
+							<li>
+								<span>Développeur Back-End</span>
+							</li>
+						</ul>
+					</div>
 
-			<div class="hero-image">
-				<div class="glowing-circle">
-					<span></span>
-					<span></span>
-					<div class="image">
-						<img src="./img/img-moi.png" alt="moi">
+					<a href="#contact" class="btn">Contactez-moi</a>
+					<a href="./img/cv.pdf" class="btn-cv">
+						<span>Voir mon CV</span>
+					</a>
+				</div>
+
+				<div class="hero-image">
+					<div class="glowing-circle">
+						<span></span>
+						<span></span>
+						<div class="image">
+							<img src="./img/img-moi.png" alt="moi">
+						</div>
 					</div>
 				</div>
-			</div>
-
+			
 		</section>
 
 		<section class="about" id="about">
@@ -233,7 +234,23 @@
 				<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
 			</div>
 		</footer>
-	<script src="https://unpkg.com/scrollreveal"></script>
+
+		<script src="https://unpkg.com/scrollreveal"></script>
+
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+						    "imports": {
+						      "three": "https://unpkg.com/three@latest/build/three.module.js",
+							      "three/addons/": "https://unpkg.com/three@latest/examples/jsm/"
+							}
+			
+						}
+		</script>
+
+		<script type="module" src="/js/three.js"></script>
+
 	</body>
 {% endblock %}
 
