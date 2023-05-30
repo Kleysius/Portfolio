@@ -49,6 +49,18 @@
 		<section class="hero" id="home">
 
 
+			<div class="hero-sci">
+				<a href="https://github.com/Kleysius">
+					<i class='bx bxl-github'></i>
+				</a>
+				<a href="#">
+					<i class='bx bxl-facebook'></i>
+				</a>
+				<a href="https://www.linkedin.com/in/thomas-sebasti-953112b2/">
+					<i class='bx bxl-linkedin'></i>
+				</a>
+			</div>
+
 			<div class="hero-content">
 				<h1>Salut, moi c'est<br>
 					<span id="name">Thomas Sebasti</span>
@@ -75,167 +87,175 @@
 			</div>
 
 			<div class="hero-image">
-					<div class="glowing-circle">
-						<span></span>
-						<span></span>
-						<div class="image">
-							<img src="./img/img-moi.png" alt="moi">
-						</div>
+				<div class="glowing-circle">
+					<span></span>
+					<span></span>
+					<div class="image">
+						<img src="./img/img-moi.png" alt="moi">
 					</div>
 				</div>
+			</div>
 
 		</section>
 
-<section class="about" id="about">
-	<div class="about-content">
-		<h2>À propos de
-			<span>moi</span>
-		</h2>
-		<p>Je suis un développeur web Junior passionné par la création de sites web esthétiques et intuitifs. Actuellement en formation pour devenir développeur web, j'ai découvert que mon intérêt se porte davantage sur le front-end et le design.</p>
-		<p>J'ai acquis des compétences solides en HTML, CSS, JavaScript, TypeScript, PHP, Node.js, MongoDB, ... Grâce à ces compétences, je suis capable de créer des sites web dynamiques, réactifs et performants.</p>
-		<p>Mon intérêt pour le design se reflète dans chacun de mes projets, où j'aime intégrer des éléments graphiques pour offrir une expérience utilisateur mémorable. Si vous êtes à la recherche d'un développeur web passionné et créatif, n'hésitez pas à
-			<span>
-				<a href="#contact">me contacter.</a>
-			</span>
-		</p>
-	</div>
-</section>
+		<section class="about" id="about">
+			<div class="about-content">
+				<img src="./img/dark-desk.png" alt="Image ronde">
+				<h2>À propos de
+					<span>moi</span>
+				</h2>
+				<p>Je suis un développeur web Junior passionné par la création de sites web esthétiques et intuitifs. Actuellement en formation pour devenir développeur web, j'ai découvert que mon intérêt se porte davantage sur le front-end et le design.</p>
+				<p>J'ai acquis des compétences solides en HTML, CSS, JavaScript, TypeScript, PHP, Node.js, MongoDB, ... Grâce à ces compétences, je suis capable de créer des sites web dynamiques, réactifs et performants.</p>
+				<p>Mon intérêt pour le design se reflète dans chacun de mes projets, où j'aime intégrer des éléments graphiques pour offrir une expérience utilisateur mémorable. Si vous êtes à la recherche d'un développeur web passionné et créatif, n'hésitez pas à
+					<span>
+						<a href="#contact">me contacter.</a>
+					</span>
+				</p>
+			</div>
+		</section>
 
-<section class="skills" id="skills">
-	<div class="skills-text">
-		<h2>Compétences</h2>
-		<p>Elles sont en constantes améliorations, car pour moi, la joie de ce métier réside dans l'apprentissage quotidien.</p>
-	</div>
-	<div class="containerAllSkills">
-		<div class="container-skills">
-			<div class="circular-progress">
-				<img src="./img/html.svg" alt="HTML">
+		<section class="skills" id="skills">
+			<div class="skills-text">
+				<h2>Compétences</h2>
+				<p>Elles sont en constantes améliorations, car pour moi, la joie de ce métier réside dans l'apprentissage quotidien.</p>
 			</div>
-			{# <span class="progress-value">0%</span> #}
-		</div>
-		<div class="container-skills">
-			<div class="circular-progress">
-				<img src="./img/css.svg" alt="CSS">
-			</div>
-			{# <span class="progress-value">0%</span> #}
-		</div>
-		<div class="container-skills">
-			<div class="circular-progress">
-				<img src="./img/javascript.png" alt="JavaScript">
-			</div>
-			{# <span class="progress-value">0%</span> #}
-		</div>
-		<div class="container-skills">
-			<div class="circular-progress">
-				<img src="./img/php.svg" alt="PHP">
-			</div>
-			{# <span class="progress-value">0%</span> #}
-		</div>
-		<div class="container-skills">
-			<div class="circular-progress">
-				<img src="./img/node-js.svg" alt="Node.js">
-			</div>
-			{# <span class="progress-value">0%</span> #}
-		</div>
-	</div>
-	<div class="skill-images">
-		<h3>Mais aussi</h3>
-		<img src="./img/typescript.svg" alt="TypeScript">
-		<img src="./img/bootstrap.svg" alt="Bootstrap">
-		<img src="./img/wordpress.svg" alt="Wordpress">
-		<img src="./img/figma.svg" alt="Figma">
-	</div>
-</section>
-
-<section class="projects" id="projects">
-	<h2>Mes
-		<span>projets</span>
-	</h2>
-	<div class="project-list">
-		{% for project in projects %}
-			<div class="project-item">
-				<h3 class="project-title">{{ project.title }}</h3>
-				<img class="project-image" src="/img-upload/{{ project.image }}" alt="{{ project.title }}">
-				<div class="project-tech">
-					{% set technologies = project.technologies|split(',') %}
-					{% for technology in technologies %}
-						{% if technology %}
-							{% set technology = '#' ~ technology %}
-							<span class="technology">{{ technology }}</span>
-						{% endif %}
-					{% endfor %}
-				</div>
-				<p>{{ project.description }}</p>
-				<div class="links">
-					{% if project.url %}
-						<div class="project-url">
-							<a href="{{ project.url }}">
-								<i class='bx bx-link-external'></i>
-							</a>
-						</div>
-					{% endif %}
-					<div class="project-git-url">
-						<a href="{{ project.gitUrl }}">
-							<i class='bx bxl-github'></i>
-						</a>
+			<div class="containerAllSkills">
+				<div class="container-skills">
+					<div class="circular-progress">
+						<img src="./img/html.svg" alt="HTML">
 					</div>
+					{# <span class="progress-value">0%</span> #}
+				</div>
+				<div class="container-skills">
+					<div class="circular-progress">
+						<img src="./img/css.svg" alt="CSS">
+					</div>
+					{# <span class="progress-value">0%</span> #}
+				</div>
+				<div class="container-skills">
+					<div class="circular-progress">
+						<img src="./img/javascript.png" alt="JavaScript">
+					</div>
+					{# <span class="progress-value">0%</span> #}
+				</div>
+				<div class="container-skills">
+					<div class="circular-progress">
+						<img src="./img/php.svg" alt="PHP">
+					</div>
+					{# <span class="progress-value">0%</span> #}
+				</div>
+				<div class="container-skills">
+					<div class="circular-progress">
+						<img src="./img/node-js.svg" alt="Node.js">
+					</div>
+					{# <span class="progress-value">0%</span> #}
 				</div>
 			</div>
-		{% endfor %}
-	</div>
-</section>
-
-<section class="contact" id="contact">
-
-	<div class="contact-content">
-
-		<h2 class="heading">Contactez -
-			<span>moi !</span>
-		</h2>
-
-		{% if message %}
-			<div class="success-message">{{ message }}</div>
-		{% endif %}
-
-		<form action="/contact" method="post">
-			<div class="input-box">
-				<input type="text" name="name" id="name" placeholder="Nom - Prénom" required>
-				<input type="email" name="email" id="email" placeholder="Adresse email" required>
+			<div class="skill-images">
+				<h3>Mais aussi</h3>
+				<img src="./img/typescript.svg" alt="TypeScript">
+				<img src="./img/bootstrap.svg" alt="Bootstrap">
+				<img src="./img/wordpress.svg" alt="Wordpress">
+				<img src="./img/figma.svg" alt="Figma">
 			</div>
-			<div class="input-box">
-				<input type="number" name="phone" id="phone" placeholder="Numéro de téléphone">
-				<input type="text" name="subject" id="subject" placeholder="Sujet" required>
+		</section>
+
+		<section class="projects" id="projects">
+			<h2>Mes
+				<span>projets</span>
+			</h2>
+			<div class="project-list">
+				{% for project in projects %}
+					<div class="project-item">
+						<h3 class="project-title">{{ project.title }}</h3>
+						<img class="project-image" src="/img-upload/{{ project.image }}" alt="{{ project.title }}">
+						<div class="project-tech">
+							{% set technologies = project.technologies|split(',') %}
+							{% for technology in technologies %}
+								{% if technology %}
+									{% set technology = '#' ~ technology %}
+									<span class="technology">{{ technology }}</span>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<p>{{ project.description }}</p>
+						<div class="links">
+							{% if project.url %}
+								<div class="project-url">
+									<a href="{{ project.url }}">
+										<i class='bx bx-link-external'></i>
+									</a>
+								</div>
+							{% endif %}
+							<div class="project-git-url">
+								<a href="{{ project.gitUrl }}">
+									<i class='bx bxl-github'></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
-			<textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
-			<button type="submit" class="btn" onclick="ajouterConfettis()">Envoyer</button>
-		</form>
-		<canvas id="confettis"></canvas>
-	</div>
-</section>
+		</section>
 
-<div class="iconTop">
-	<a href="#home">
-		<i class='bx bx-up-arrow-alt'></i>
-	</a>
-</div>
+		<section class="contact" id="contact">
 
-<footer class='footer'>
-	<div class="footer-text">
-		<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
-	</div>
-</footer>
+			<div class="contact-content">
 
-<script src="https://unpkg.com/scrollreveal"></script>
+				<h2 class="heading">Contactez -
+					<span>moi !</span>
+				</h2>
 
-<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+				{% if message %}
+					<div class="success-message">{{ message }}</div>
+				{% endif %}
 
-<script type="importmap">
-	{
+				<form action="/contact" method="post">
+					<div class="input-box">
+						<input type="text" name="name" id="name" placeholder="Nom - Prénom" required>
+						<input type="email" name="email" id="email" placeholder="Adresse email" required>
+					</div>
+					<div class="input-box">
+						<input type="number" name="phone" id="phone" placeholder="Numéro de téléphone">
+						<input type="text" name="subject" id="subject" placeholder="Sujet" required>
+					</div>
+					<textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
+					<button type="submit" class="btn" onclick="ajouterConfettis()">Envoyer</button>
+				</form>
+				<canvas id="confettis"></canvas>
+			</div>
+		</section>
+
+		<div class="iconTop">
+			<a href="#home">
+				<i class='bx bx-up-arrow-alt'></i>
+			</a>
+		</div>
+
+		<footer class='footer'>
+			<div class="footer-text">
+				<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
+			</div>
+		</footer>
+
+		<script src="https://unpkg.com/scrollreveal"></script>
+
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
 				"imports": {
 				"three": "https://unpkg.com/three@latest/build/three.module.js",
 				"three/addons/": "https://unpkg.com/three@latest/examples/jsm/"
+				}
 			}
-		}
-</script>
+		</script>
 
-<script type="module" src="/js/three.js"></script></body>{% endblock %}{% block script %}<script src="/js/home.js"></script>{% endblock %}
+		<script type="module" src="/js/three.js"></script>
+
+	</body>
+{% endblock %}
+
+{% block script %}
+	<script src="/js/home.js"></script>
+{% endblock %}

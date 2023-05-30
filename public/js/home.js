@@ -112,6 +112,7 @@ observer.observe(heroSection);
 // Faire s'écarter le hero-content, hero-image et hero-sci pour laisser place à la section about au scroll
 let heroContent = document.querySelector(".hero-content");
 let heroSci = document.querySelector(".hero-sci");
+let heroImage = document.querySelector(".glowing-circle");
 
 window.addEventListener("scroll", () => {
     if (window.innerWidth > 1100) {
@@ -119,6 +120,7 @@ window.addEventListener("scroll", () => {
 
         heroContent.style.transform = `translateX(-${value * 1.2}px)`;
         heroSci.style.transform = `translateX(-${value * 1.2}px)`;
+        heroImage.style.transform = `translateX(${value * 1.2}px)`;
     }
 });
 
