@@ -47,15 +47,15 @@
 		</header>
 
 		<section class="hero" id="home">
-
+			<div id="particles-js"></div>
 
 			<div class="hero-sci">
 				<a href="https://github.com/Kleysius">
 					<i class='bx bxl-github'></i>
 				</a>
-				<a href="#">
+				{# <a href="#">
 					<i class='bx bxl-facebook'></i>
-				</a>
+				</a> #}
 				<a href="https://www.linkedin.com/in/thomas-sebasti-953112b2/">
 					<i class='bx bxl-linkedin'></i>
 				</a>
@@ -104,9 +104,10 @@
 				<h2>À propos de
 					<span>moi</span>
 				</h2>
-				<p>Je suis un développeur web Junior passionné par la création de sites web esthétiques et intuitifs. Actuellement en formation pour devenir développeur web, j'ai découvert que mon intérêt se porte davantage sur le front-end et le design.</p>
-				<p>J'ai acquis des compétences solides en HTML, CSS, JavaScript, TypeScript, PHP, Node.js, MongoDB, ... Grâce à ces compétences, je suis capable de créer des sites web dynamiques, réactifs et performants.</p>
-				<p>Mon intérêt pour le design se reflète dans chacun de mes projets, où j'aime intégrer des éléments graphiques pour offrir une expérience utilisateur mémorable. Si vous êtes à la recherche d'un développeur web passionné et créatif, n'hésitez pas à
+				<p>Après avoir travaillé pendant 8 ans dans l'industrie chimique j'ai décidé de me reconvertir professionnellement dans un domaine alliant créativité et informatique : le Développement Web.</p>
+				<p>Diplômé d'une licence de Chimie, j’ai donc complété mon parcours par une formation diplômante à l'école Ri7 - Ecole de développement supérieur sur Aubagne pour devenir Développeur Web.</p>
+				<p>Déterminé à perfectionner mes connaissances en programmation, je suis actuellement à la recherche d'une opportunité d'alternance de 12 mois à partir d'Octobre 2023 pour devenir un Concepteur Développeur d'applications de niveau bac+3.</p>
+				<p>Si vous êtes à la recherche d'un développeur web passionné et créatif, n'hésitez pas à
 					<span>
 						<a href="#contact">me contacter.</a>
 					</span>
@@ -154,9 +155,11 @@
 			<div class="skill-images">
 				<h3>Mais aussi</h3>
 				<img src="./img/typescript.svg" alt="TypeScript">
+				<img src="./img/mongodb-icon.svg" alt="MongoDB">
 				<img src="./img/bootstrap.svg" alt="Bootstrap">
 				<img src="./img/wordpress.svg" alt="Wordpress">
 				<img src="./img/figma.svg" alt="Figma">
+				<img src="./img/threejs-1.svg" alt="ThreeJS">
 			</div>
 		</section>
 
@@ -220,9 +223,8 @@
 						<input type="text" name="subject" id="subject" placeholder="Sujet" required>
 					</div>
 					<textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
-					<button type="submit" class="btn" onclick="ajouterConfettis()">Envoyer</button>
+					<button type="submit" class="btn">Envoyer</button>
 				</form>
-				<canvas id="confettis"></canvas>
 			</div>
 		</section>
 
@@ -234,11 +236,13 @@
 
 		<footer class='footer'>
 			<div class="footer-text">
-				<p>&copy; 2023 SEBASTI Thomas. Tous droits réservés.</p>
+				<p>&copy; 2023 Portfolio - SEBASTI Thomas. Tous droits réservés.</p>
 			</div>
 		</footer>
 
 		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
 

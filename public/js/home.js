@@ -1,5 +1,5 @@
-// Light/Dark mode
 const themeButton = document.querySelector('.light-mode');
+let isLightMode = false;
 
 themeButton.addEventListener('click', () => {
     const body = document.body;
@@ -8,13 +8,78 @@ themeButton.addEventListener('click', () => {
         body.classList.add('light');
         body.classList.remove('dark');
         themeButton.innerHTML = '<i class="bx bx-moon"></i>';
+        isLightMode = true;
     } else if (body.classList.contains('light')) {
         body.classList.add('dark');
         body.classList.remove('light');
         themeButton.innerHTML = '<i class="bx bx-sun"></i>';
+        isLightMode = false;
     }
 
+    updateParticlesConfig();
 });
+
+function updateParticlesConfig() {
+    const particlesConfig = {
+        particles: {
+            number: { value: 300, density: { enable: true, value_area: 800 } },
+            color: { value: isLightMode ? "#000000" : "#ffffff" },
+            shape: {
+                type: "circle",
+                stroke: { width: 0, color: "#000000" },
+                polygon: { nb_sides: 5 },
+                image: { src: "img/github.svg", width: 100, height: 100 }
+            },
+            opacity: {
+                value: 1,
+                random: true,
+                anim: { enable: true, speed: 1, opacity_min: 0, sync: false }
+            },
+            size: {
+                value: 2,
+                random: true,
+                anim: { enable: false, speed: 2, size_min: 0.3, sync: false }
+            },
+            line_linked: {
+                enable: false,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.6,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: { enable: false, rotateX: 600, rotateY: 600 }
+            }
+        },
+        interactivity: {
+            detect_on: "window",
+            events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: false, mode: "push" },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 268, line_linked: { opacity: 1 } },
+                bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 },
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 },
+                remove: { particles_nb: 2 }
+            }
+        },
+        retina_detect: true
+    };
+
+    particlesJS("particles-js", particlesConfig);
+}
+
+updateParticlesConfig();
 
 // Scroll section active link
 let sections = document.querySelectorAll('section');
@@ -35,55 +100,6 @@ window.onscroll = () => {
         }
     });
 };
-
-// Ajouter des confettis avec canvas
-function ajouterConfettis() {
-    const canvas = document.getElementById("confettis");
-    const context = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const confettis = [];
-
-    canvas.style.display = "block";
-    canvas.classList.add("confettis-small");
-
-    const gravite = 0.015; // Valeur de la gravité
-
-    function dessinerConfettis() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        confettis.forEach(confetti => {
-            context.save();
-            context.translate(confetti.x, confetti.y);
-            context.rotate(confetti.angle);
-            context.fillStyle = confetti.couleur;
-            context.fillRect(-confetti.longueur / 2, -confetti.largeur / 2, confetti.longueur, confetti.largeur);
-            context.restore();
-
-            confetti.vitesseY += gravite; // Ajout de la gravité
-            confetti.x += confetti.vitesseX;
-            confetti.y += confetti.vitesseY;
-            confetti.angle += 0.06;
-        });
-
-        requestAnimationFrame(dessinerConfettis);
-    }
-
-    for (let i = 0; i < 120; i++) {
-        confettis.push({
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            longueur: Math.random() * 20, // Longueur du confetti
-            largeur: Math.random() * 6 + 3, // Largeur du confetti
-            vitesseX: (Math.random() - 0.5) * 8,
-            vitesseY: (Math.random() - 0.5) * 8,
-            angle: Math.random() * 2 * Math.PI,
-            couleur: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
-        });
-    }
-
-    dessinerConfettis();
-}
 
 // Masquer la div "iconTop" lorsque vous êtes sur la section "hero"
 let heroSection = document.getElementById('home');
