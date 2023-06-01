@@ -6,7 +6,7 @@ const projectModel = require('../models/projectModel.js');
 const authGuard = require('../services/authGuard.js');
 
 // Route pour la page d'accueil
-projectRouter.get('/home', async (req, res) => {
+projectRouter.get('/', async (req, res) => {
     try {
         let projects = await projectModel.find();
         res.render('pages/home.twig', { projects: projects });

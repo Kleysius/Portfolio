@@ -707,7 +707,7 @@ header nav a {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background: conic-gradient(#7d2ae8 3.6deg, #f1f1f1 0deg);
+    background: conic-gradient(#915FFF 3.6deg, #f1f1f1 0deg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -727,12 +727,12 @@ header nav a {
     width: 100px;
 }
 
-.progress-value {
+/* .progress-value {
     position: relative;
     font-size: 30px;
     font-weight: 600;
     color: #7d2ae8;
-}
+} */
 
 .projects {
     font-family: 'Quicksand', sans-serif;
@@ -1294,7 +1294,7 @@ header nav a {
 
     .projects {
         width: 100%;
-        padding: 0 5% 0;
+        padding: 0 5% 50px;
     }
 
     .projects h2 {

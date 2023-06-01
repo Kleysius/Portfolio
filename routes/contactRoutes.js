@@ -3,19 +3,6 @@ const contactRouter = express.Router();
 const contactModel = require('../models/contactModel.js');
 const transporter = require('../services/mailer.js');
 
-
-// Route pour la page de contact
-contactRouter.get('/contact', async (req, res) => {
-    try {
-        let message = req.session.message;
-        delete req.session.message;
-        res.render('pages/home.twig', { message: message });
-    } catch (error) {
-        res.send(error);
-    }
-});
-
-
 contactRouter.post('/contact', async (req, res) => {
     try {
         let newContact = new contactModel(req.body);
@@ -35,8 +22,8 @@ contactRouter.post('/contact', async (req, res) => {
         };
 
         await transporter.sendMail(mailOptions);
-        req.session.message = 'Votre message a bien été envoyé !';
-        res.redirect('/contact#contact');
+        req.session.mailMessage = 'Votre message a bien été envoyé !';
+        res.redirect('/#contact');
 
     } catch (error) {
         console.log(error);

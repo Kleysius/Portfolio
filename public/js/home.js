@@ -167,7 +167,7 @@ toggleBtn.addEventListener('click', () => {
 
 // Animer la progress bar
 let circularProgressList = document.querySelectorAll('.circular-progress');
-let progressValueList = document.querySelectorAll('.progress-value');
+// let progressValueList = document.querySelectorAll('.progress-value');
 
 let progressEndValueList = [90, 85, 70, 60, 65];
 
@@ -181,12 +181,11 @@ function animateProgress() {
 
         let progressAnimation = setInterval(() => {
             progressStartValue++;
-            // progressValueList[index].textContent = progressStartValue + '%';
 
             if (body.classList.contains('dark')) {
-                circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #f1f1f1 0deg)`;
+                circularProgress.style.background = `conic-gradient(#915FFF ${progressStartValue * 3.6}deg, #f1f1f1 0deg)`;
             } else {
-                circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #e4dff0 0deg)`;
+                circularProgress.style.background = `conic-gradient(#915FFF ${progressStartValue * 3.6}deg, #e4dff0 0deg)`;
             }
 
             if (progressStartValue === progressEndValue) {

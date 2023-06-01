@@ -10,6 +10,7 @@ require('dotenv').config();
 
 const app = express();
 
+
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +26,10 @@ app.use(session({
     resave: false, // Cette option permet de sauvegarder une session même si elle n'a pas été modifiée
     saveUninitialized: false // Cette option contrôle si une session non initialisée (c'est-à-dire une session qui n'a pas été modifiée) doit être enregistrée dans le store de session. Si false, elle ne sera pas enregistrée dans le store de session, mais une session sera quand même créée. La valeur recommandée est false.
 }));
-
+app.use(function (req, res, next) {//récupère la cession utilisateur si connecté sur toutes les pages
+    res.locals.session = req.session
+    next()
+})
 app.use(projectRouter);
 app.use(userRouter);
 app.use(contactRouter);

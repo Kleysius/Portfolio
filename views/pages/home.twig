@@ -125,31 +125,26 @@
 					<div class="circular-progress">
 						<img src="./img/html.svg" alt="HTML">
 					</div>
-					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/css.svg" alt="CSS">
 					</div>
-					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/javascript.png" alt="JavaScript">
 					</div>
-					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/php.svg" alt="PHP">
 					</div>
-					{# <span class="progress-value">0%</span> #}
 				</div>
 				<div class="container-skills">
 					<div class="circular-progress">
 						<img src="./img/node-js.svg" alt="Node.js">
 					</div>
-					{# <span class="progress-value">0%</span> #}
 				</div>
 			</div>
 			<div class="skill-images">
@@ -209,8 +204,8 @@
 					<span>moi !</span>
 				</h2>
 
-				{% if message %}
-					<div class="success-message">{{ message }}</div>
+				{% if session.mailMessage %}
+					<div class="success-message">{{ session.mailMessage }}</div>
 				{% endif %}
 
 				<form action="/contact" method="post">

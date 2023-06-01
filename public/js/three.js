@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     // camera position
-    camera.position.set(0, 0, 8);
+    camera.position.set(0, 0, 9);
     controls.update();
 
     function animate() {
