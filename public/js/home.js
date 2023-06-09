@@ -49,7 +49,7 @@ function updateParticlesConfig() {
             },
             move: {
                 enable: true,
-                speed: 1.6,
+                speed: 1.5,
                 direction: "none",
                 random: true,
                 straight: false,

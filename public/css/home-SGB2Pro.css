@@ -575,10 +575,9 @@ header nav a {
 
 .image img {
     position: absolute;
-    top: 5%;
     left: 55%;
     transform: translateX(-50%);
-    max-width: 450px;
+    max-width: 315px;
     object-fit: cover;
 }
 
