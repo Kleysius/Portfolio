@@ -222,6 +222,7 @@ header {
 
 .logo a {
     height: 50px;
+    width: 50px;
     cursor: inherit;
 }
 
@@ -669,7 +670,7 @@ header nav a {
     width: 80px;
 }
 
-.skill-images img:nth-child(7) {
+.skill-images img:nth-child(9) {
     background-color: #f1f1f1;
     padding: 8px;
     border-radius: 10px;
@@ -1137,6 +1138,7 @@ header nav a {
 
     .logo a {
         height: 55px;
+        width: 55px;
     }
 
     .logo img {
@@ -1364,6 +1366,7 @@ header nav a {
 
     .logo a {
         height: 45px;
+        width: 45px;
     }
 
     .logo img {
@@ -1453,7 +1456,7 @@ header nav a {
     }
 
     .image img {
-        max-width: 160px;
+        max-width: 100%;
     }
 
     .about {
@@ -1635,6 +1638,10 @@ header nav a {
 
     .dropdownMenu li a {
         font-size: 14px;
+    }
+
+    .image img {
+        max-width: 100%;
     }
 
     .success-message {
