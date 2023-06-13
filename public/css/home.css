@@ -887,6 +887,17 @@ header nav a {
     margin-bottom: 48px;
 }
 
+.contact form p {
+    font-size: 18px;
+    background: transparent;
+    color: red;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: start;
+}
+
 .contact form .input-box {
     display: flex;
     justify-content: space-between;
@@ -1131,7 +1142,7 @@ header nav a {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1510px) {
+@media screen and (min-width: 768px) and (max-width: 1600px) {
     .header {
         padding: 30px 5%;
     }
