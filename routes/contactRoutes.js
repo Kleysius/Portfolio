@@ -11,7 +11,6 @@ contactRouter.post('/contact', async (req, res) => {
         if (err) {
             console.log(err);
             res.render('pages/home.twig', { error: err.errors, contact: req.body })
-            res.redirect('/#contact');
             return;
         }
 
