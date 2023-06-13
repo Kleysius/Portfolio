@@ -6,9 +6,16 @@ const transporter = require('../services/mailer.js');
 contactRouter.post('/contact', async (req, res) => {
     try {
         let newContact = new contactModel(req.body);
-        newContact.validateSync();
-        await newContact.save();
+        let err = newContact.validateSync();
 
+        if (err) {
+            console.log(err);
+            res.render('pages/home.twig', { error: err.errors, contact: req.body })
+            res.redirect('/#contact');
+            return;
+        }
+
+        await newContact.save();
         // Envoyer un mail
         let mailOptions = {
             from: 'sebasti.thomass@gmail.com',
@@ -27,7 +34,7 @@ contactRouter.post('/contact', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.send(error);
+        res.render('pages/home.twig', { error: error })
     }
 });
 

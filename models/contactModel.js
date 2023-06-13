@@ -44,7 +44,7 @@ const contactSchema = new mongoose.Schema({
         required: [true, 'Le message est obligatoire'],
         validate: {
             validator: function (val) {
-                return /^[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u.test(val);
+                return /^[\s\p{P}\p{L}\d?!]{1,500}$/u.test(val);
             },
             message: 'Le message n\'est pas valide, il ne doit contenir que des lettres, des chiffres, des espaces, des apostrophes, des virgules et des tirets'
         }
