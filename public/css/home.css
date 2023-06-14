@@ -1169,30 +1169,6 @@ header nav a {
 
     .hero {
         padding: 50px 8% 0;
-        flex-direction: column-reverse;
-    }
-
-    .hero-sci {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 20%;
-    }
-
-    .hero-sci a:nth-child(1) {
-        opacity: 0;
-        animation: slideRight 1s ease forwards;
-        animation-delay: 2.1s;
-    }
-    
-    .hero-sci a:nth-child(2) {
-        opacity: 0;
-        animation: slideLeft 1s ease forwards;
-        animation-delay: 2.1s;
-    }
-
-    .hero-content {
-        max-width: 600px;
     }
 
     .hero-content h1 {
@@ -1409,9 +1385,9 @@ header nav a {
 
     .hero-sci {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
-        width: 80%;
+        width: 50%;
     }
 
     .hero-sci a:nth-child(1) {
