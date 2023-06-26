@@ -39,16 +39,15 @@ contactRouter.post('/contact', async (req, res) => {
 
 contactRouter.post('/contactApi', async (req, res) => {
     try {
-      
             let newContact = new contactModel(req.body);
             let err = newContact.validateSync();
-    
+
             if (err) {
                 console.log(err);
                res.json({ error: err.errors, contact: req.body })
                 return;
             }
-    
+            
             await newContact.save();
             // Envoyer un mail
             let mailOptions = {
