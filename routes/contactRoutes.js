@@ -57,7 +57,6 @@ contactRouter.post('/contactApi', async (req, res) => {
                 subject: 'Nouveau message - Portfolio',
                 text: `Vous avez reçu un nouveau message de : ${req.body.name}.
                 Email : ${req.body.email}
-                Téléphone : ${req.body.phone}
                 Sujet : ${req.body.subject}
                 Message : ${req.body.message}`,
             };
