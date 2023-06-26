@@ -39,7 +39,7 @@ contactRouter.post('/contact', async (req, res) => {
 
 contactRouter.post('/contactApi', async (req, res) => {
     try {
-        if (req.body.apiKey) {
+      
             let newContact = new contactModel(req.body);
             let err = newContact.validateSync();
     
@@ -65,10 +65,6 @@ contactRouter.post('/contactApi', async (req, res) => {
             await transporter.sendMail(mailOptions);
             req.session.mailMessage = 'Votre message a bien été envoyé !';
             res.redirect('/#contact');
-            
-        }else{
-            throw new Error('Vous n\'avez pas les droits pour effectuer cette action');
-        }
 
     } catch (error) {
         console.log(error);

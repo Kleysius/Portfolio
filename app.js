@@ -5,11 +5,16 @@ const crypto = require('crypto');
 const projectRouter = require('./routes/projectRoutes');
 const userRouter = require('./routes/userRouter');
 const contactRouter = require('./routes/contactRoutes');
+const cors = require('cors');
+
 
 require('dotenv').config();
 
 const app = express();
 
+app.use(cors({
+    origin: 'https://kleysius.github.io/Portfolio-VSCode/'
+}));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
