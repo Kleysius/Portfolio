@@ -13,7 +13,9 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://kleysius.github.io'
+    origin: 'https://kleysius.github.io',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.static('public'));
 app.use(express.json());
