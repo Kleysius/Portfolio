@@ -37,4 +37,43 @@ contactRouter.post('/contact', async (req, res) => {
     }
 });
 
+contactRouter.post('/contactApi', async (req, res) => {
+    try {
+        if (req.body.apiKey) {
+            let newContact = new contactModel(req.body);
+            let err = newContact.validateSync();
+    
+            if (err) {
+                console.log(err);
+               res.json({ error: err.errors, contact: req.body })
+                return;
+            }
+    
+            await newContact.save();
+            // Envoyer un mail
+            let mailOptions = {
+                from: 'sebasti.thomass@gmail.com',
+                to: 'sebasti.thomass@gmail.com',
+                subject: 'Nouveau message - Portfolio',
+                text: `Vous avez reçu un nouveau message de : ${req.body.name}.
+                Email : ${req.body.email}
+                Téléphone : ${req.body.phone}
+                Sujet : ${req.body.subject}
+                Message : ${req.body.message}`,
+            };
+    
+            await transporter.sendMail(mailOptions);
+            req.session.mailMessage = 'Votre message a bien été envoyé !';
+            res.redirect('/#contact');
+            
+        }else{
+            throw new Error('Vous n\'avez pas les droits pour effectuer cette action');
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.json({ error: error })
+    }
+});
+
 module.exports = contactRouter;

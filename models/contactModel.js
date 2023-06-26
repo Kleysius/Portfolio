@@ -23,6 +23,7 @@ const contactSchema = new mongoose.Schema({
     },
     phone: {
         type: String,
+        require: false,
         validate: {
             validator: function (val) {
                 return /^[0-9]{10}$/.test(val);
